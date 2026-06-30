@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   CRELMAN — Design Tokens (Tailwind v4 @theme)
+   Premium purple SaaS CRM theme
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Brand Colors */
+  --color-brand-50: #faf5ff;
+  --color-brand-100: #f3e8ff;
+  --color-brand-200: #e9d5ff;
+  --color-brand-300: #d8b4fe;
+  --color-brand-400: #c084fc;
+  --color-brand-500: #a855f7;
+  --color-brand-600: #9333ea;
+  --color-brand-700: #7e22ce;
+  --color-brand-800: #6b21a8;
+  --color-brand-900: #581c87;
+
+  /* Background & Surface */
+  --color-canvas: #fcfcff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8f7fd;
+
+  /* Text */
+  --color-ink: #1e293b;
+  --color-ink-soft: #64748b;
+
+  /* Borders */
+  --color-line: #e7e5f4;
+
+  /* Typography */
+  --font-sans:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  --font-display:
+    "Sora",
+    "Inter",
+    system-ui,
+    sans-serif;
+
+  /* Radius */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* Shadows */
+  --shadow-card:
+    0 2px 6px rgba(15, 23, 42, 0.04),
+    0 12px 32px rgba(147, 51, 234, 0.08);
+
+  --shadow-soft:
+    0 2px 8px rgba(15, 23, 42, 0.05);
+
+  --shadow-pop:
+    0 20px 48px rgba(147, 51, 234, 0.16);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────────────────────── */
+
+* {
+  border-color: var(--color-line);
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Premium headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Scrollbar
+   ───────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6c8f7;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b99af2;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Utilities
+   ───────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-card);
+  }
+
+  .brand-gradient {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-brand-500),
+      var(--color-brand-700)
+    );
+  }
+
+  .brand-gradient-hover:hover {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-brand-600),
+      var(--color-brand-800)
+    );
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
