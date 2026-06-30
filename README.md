@@ -293,33 +293,6 @@ Simply provide a valid Gemini API key in the backend `.env` file to enable these
 
 ---
 
-
-
-## Frontend
-
-You can deploy the frontend on:
-
-- Vercel
-- Netlify
-
----
-
-## Backend
-
-Deploy the backend using:
-
-- Render
-- Railway
-- DigitalOcean
-- AWS
-
-After deployment, update the frontend environment variable:
-
-```env
-VITE_API_URL=https://your-backend-url/api
-```
----
-
 # 👨‍💻 Author
 
 **Sagar Gupta**
