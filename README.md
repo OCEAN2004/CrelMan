@@ -1,4 +1,4 @@
-# 🚀 CRELMAN - AI-Powered CRM
+# CRELMAN - AI-Powered CRM
 
 <p align="center">
   <img src="./client/src/assets/logo.png" alt="CRELMAN Logo" width="150"/>
